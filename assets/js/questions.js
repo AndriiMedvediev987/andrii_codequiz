@@ -32,4 +32,10 @@ var questions = [
     choices: ['JavaScript', 'terminal / bash', 'for loops', 'console.log'],
     answer: 'console.log',
   },
+  {
+    title:
+      'Which symbol is used for single lin comments in Javascript:',
+    choices: ['//', '/**/', '<>', '#'],
+    answer: '//',
+  },
 ];
