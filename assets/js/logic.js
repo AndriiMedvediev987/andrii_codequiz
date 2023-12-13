@@ -2,6 +2,8 @@
 let quizTime = questions.length * 15;
 let timer = 0;
 let questionIndex = 0;
+var correctVoice = new Audio('assets/sfx/correct.wav');
+var mistakeVoice = new Audio('assets/sfx/incorrect.wav');
 
 // get buttons from DOM
 let startButton = document.getElementById("start");
@@ -35,11 +37,13 @@ let choiseCLick = function (event) {
     if (button.matches(".choice")) {
         if (button.value === questions[questionIndex].answer) {
             feedbackSection.textContent = "Correct!";
+            correctVoice.play();
         }
         else {
             quizTime = Math.max(0, quizTime - 15);
             timeLabel.textContent = quizTime;
             feedbackSection.textContent = "Wrong!";
+            mistakeVoice.play();
         }
 
         feedbackSection.setAttribute('class', 'feedback');
